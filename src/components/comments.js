@@ -76,7 +76,7 @@ class Comments extends React.Component {
 
         this.setState((prevstate) => ({
           comments: [...prevstate.comments, newComment],
-          questionOpen: !prevstate.openQuestion,
+          openQuestion: !prevstate.openQuestion,
           commentText:'',
           nameText:'',
           schoolText:''
