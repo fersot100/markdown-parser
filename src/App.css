@@ -1,0 +1,22 @@
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 6rem auto;
+  grid-gap: 2rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.header {
+  background: rgb(0, 132, 255);
+  grid-column: span 3;
+}
+.scrollView {
+  grid-column: 2;
+  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.248);
+  text-align: justify;
+  padding: 3rem;
+  line-height: 1.4rem;
+}
+.Comments {
+  grid-column: 2;
+}
