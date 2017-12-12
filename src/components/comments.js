@@ -13,7 +13,7 @@ const comments = [{
   votes: 7,
   body: "How do I add a GameObject to the Unity hierarchy",
   student: {
-    name: 'James Miers',
+    name: 'Alan Sitomer',
     school: 'Kennedy High Scool',
     grade: 10
   }
@@ -24,14 +24,6 @@ const comments = [{
     name: 'Juan Erazo',
     school: 'Wilson High Scool',
     grade: 11
-  }
-},{
-  votes: 0,
-  body: "Can someone explain the code in step 2? I am stuck getting an error on line 34",
-  student: {
-    name: 'William kim',
-    school: 'Monroe High Scool',
-    grade: 12
   }
 }]
 

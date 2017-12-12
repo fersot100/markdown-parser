@@ -46,9 +46,6 @@
   text-align: center;
 }
 
-.input-textarea {
-  text-align: left;
-}
 
 .input__scalable {
   border: 1px solid rgba(160,159,159,0.5);
@@ -59,6 +56,10 @@
   font-family: 'Poppins', sans-serif;
   color: rgb(160,159,159);
   text-align: center;
+}
+.input-textarea {
+  width: 25rem;
+  text-align: left;
 }
 
 .comments {
