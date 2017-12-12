@@ -46,6 +46,21 @@
   text-align: center;
 }
 
+.input-textarea {
+  text-align: left;
+}
+
+.input__scalable {
+  border: 1px solid rgba(160,159,159,0.5);
+  border-radius: 7px;
+  outline: none;
+  padding: 13px 21px 13px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(160,159,159);
+  text-align: center;
+}
+
 .comments {
   grid-column: 2;
   border: 1px solid rgba(160,159,159,0.5);
@@ -55,11 +70,18 @@
   margin-bottom: 10rem; 
 }
 
+.comments__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .comments__info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex: 1;
 }
 
 .comments__info-input {
@@ -70,6 +92,47 @@
 
 .comments__info-input * {
   margin: 0.4rem;
+}
+
+
+.comments__newquestion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  border-left: 1px solid rgba(238, 238, 238, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 600ms ease-in-out;
+}
+
+.comments__newquestion-collapsed{
+  /* 0 does not work so we have to use a small number */
+  flex: .00000001;
+}
+
+.comments__newquestion form{
+  display: flex;
+  flex-direction: column;
+}
+
+.comments__forminput{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments__forminput *{
+ margin: 0.2rem 0.4rem;
+}
+
+.comments__forminput-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .comment {

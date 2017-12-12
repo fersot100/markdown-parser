@@ -7,7 +7,7 @@ const comments = [{
   student: {
     name: 'Dustin Podell',
     school: 'Granada Hills High Scool',
-    grade: '12'
+    grade: 12
   }
 },{
   votes: 7,
@@ -15,7 +15,7 @@ const comments = [{
   student: {
     name: 'James Miers',
     school: 'Kennedy High Scool',
-    grade: '10'
+    grade: 10
   }
 },{
   votes: 2,
@@ -23,13 +23,19 @@ const comments = [{
   student: {
     name: 'Juan Erazo',
     school: 'Wilson High Scool',
-    grade: '11'
+    grade: 11
   }
 }]
 
 class Comments extends React.Component {
 
-  state = {comments: []};
+  state = {
+    comments: [],
+    questionOpen: false,
+    commentText:'',
+    nameText:'',
+    schoolText:''
+  };
 
   componentDidMount(){
     this.setState(() => ({comments}));
@@ -45,20 +51,93 @@ class Comments extends React.Component {
     }))
   }
 
+  openQuestion = () => {
+    this.setState((prevstate) => ({
+        openQuestion: !prevstate.openQuestion
+    }));
+  }
+
+  onFormSubmit = (e) => {
+    e.preventDefault();
+    const namelength = this.state.nameText.length;
+    const schoolLength = this.state.schoolText.length;
+    const commentlength = this.state.commentText.length;
+
+    if(namelength > 0 && schoolLength > 0 && commentlength > 0){
+      const newComment = {
+        votes: 0,
+        body: this.state.commentText,
+        student: {
+          name: this.state.nameText,
+          school: this.state.schoolText,
+          grade: 12
+        }
+      }
+      console.log(newComment);
+      console.log(this.state.comments[0])
+
+      this.setState((prevstate) => ({
+        //comments: [...prevstate.comments, newComment], WHY DOES THIS NOT WORK
+        openQuestion: !prevstate.openQuestion,
+        commentText:'',
+        nameText:'',
+        schoolText:''
+      }));
+    }else{
+
+    }
+  }
+
+  onNameChange = (e) => {
+    const nameText = e.target.value; 
+    this.setState(() => ({ nameText }));
+  }
+
+  onSchoolChange = (e) => {
+    const schoolText = e.target.value; 
+    this.setState(() => ({ schoolText }));
+  }
+
+  onCommentTextChange = (e) => {
+    const commentText = e.target.value; 
+    this.setState(() => ({ commentText }));
+  }
+
   render(){
     return (
         <div className="comments">
-          <div className='comments__info'>
-            <h1>Comments</h1>
-            <div className='comments__info-input'>
-              <input className='input' type='text' placeholder='Search for a question' />
-              <button className='button'>Ask a new question</button>
+          <div className='comments__header'>
+            <div className='comments__info'>
+              <h1>Comments</h1>
+              <div className='comments__info-input'>
+                <input className='input' type='text' placeholder='Search for a question' />
+                <button onClick={this.openQuestion} className='button'>Ask a new question</button>
+              </div>
+            </div>
+            <div className={!this.state.openQuestion ? 'comments__newquestion comments__newquestion-collapsed' : 'comments__newquestion'}>
+              <form onSubmit={this.onFormSubmit}> 
+                  <div className='comments__forminput-top'>
+                    <div className='comments__forminput'>
+                      <p>name</p>
+                      <input name='name' className='input__scalable' type='text' placeholder='Your Name' value={this.state.nameText} onChange={this.onNameChange}/>
+                    </div>
+                    <div  className='comments__forminput'> 
+                      <p>school</p>
+                      <input name='school' className='input__scalable' type='text' placeholder='Your School' value={this.state.schoolText} onChange={this.onSchoolChange}/>
+                    </div>
+                  </div>
+                  <div className='comments__forminput'>
+                    <p>Comment</p>
+                    <textarea name='comment' className='input__scalable input-textarea' type='text' placeholder='Write your comment here...'  value={this.state.commentText} onChange={this.onCommentTextChange}/>
+                    <button className='button'>Submit</button>
+                  </div>
+              </form>
             </div>
           </div>
           <div className='comments__body'>
             {this.state.comments.sort((a, b) => b.votes - a.votes)
                                 .map((comment,i) => 
-              <Comment {...comments[i]} index={i} onLike={this.handleOnLike}/>
+              <Comment {...comments[i]} index={i} onLike={this.handleOnLike} key={i}/>
             )}
           </div>
         </div>
