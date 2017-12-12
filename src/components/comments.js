@@ -13,7 +13,7 @@ class Student {
 }
 
 const Comments = props => {
-    
+
     const studentList = props.students;
 
     return (
@@ -21,8 +21,6 @@ const Comments = props => {
         
         </div>
     )
-   
-
 }
    
 
