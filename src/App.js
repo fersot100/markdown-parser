@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/App.css';
 import ScrollView from './components/scroll-view';
 import Comments from './components/comments';
 
