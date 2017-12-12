@@ -32,8 +32,10 @@ const Comments = props => {
         <div className="comments">
           <div className='comments__info'>
             <h1>Comments</h1>
-            <input type='text' placeholder='Search for a question' />
-            <button>Ask a new question</button>
+            <div className='comments__info-input'>
+              <input className='input' type='text' placeholder='Search for a question' />
+              <button className='button'>Ask a new question</button>
+            </div>
           </div>
           <div className='comments__body'>
             {comments.map((comment,i) => 

@@ -11,14 +11,41 @@
 }
 .scrollView {
   grid-column: 2;
-  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.248);
+  border: 1px solid rgba(160,159,159,0.5);
   text-align: justify;
   padding: 3rem;
   line-height: 1.4rem;
 }
+
+.button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: rgb(96,145,243);
+  border-radius: 7px;
+  border: none;
+  padding: 12px 45px;
+  color: white;
+}
+
+.input {
+  width: 294px;
+  border: 1px solid rgba(160,159,159,0.5);
+  border-radius: 7px;
+  outline: none;
+  padding: 13px 21px 13px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(160,159,159);
+  text-align: center;
+}
+
 .comments {
   grid-column: 2;
-  background: #f3f3f3;
+  border: 1px solid rgba(160,159,159,0.5);
+  border-top: none; 
+  display: flex;
+  flex-direction: column;
 }
 
 .comments__info {
@@ -28,32 +55,42 @@
   align-items: center;
 }
 
+.comments__info-input {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.comments__info-input * {
+  margin: 0.4rem;
+}
+
 .comment {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows:6rem auto;
-  border: 1px solid #949494;
+  display: flex;
+  border-top: 1px solid #eeeeee;
   border-bottom: none;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1.4rem;
+}
+
+.comment p{
+  margin: 0.4rem 0;
 }
 
 .comment__student{
-  grid-row: 1;
   display: flex;
-  flex-direction: column;;
-  border-right: 1px solid #949494;
-  margin-left: 0.4rem; 
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
 }  
 
-.comment__student-name{
-  text-decoration: underline;
+.comment__student-school{
+  color: #a7a7a7;
 }  
 
 .comment__student *{
   margin: 0.4rem 0;
-  width: 100%;
-}
-
-.comment__data {
-  margin-left: 0.4rem;
+  margin-right: 0.4rem;
 }
 
