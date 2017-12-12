@@ -1,0 +1,17 @@
+h1, h2, h3, h4, h5{
+    color: rgba(0, 85, 255, 0.85);
+}
+p {
+    line-height: 1.6rem;
+}
+code {
+    background: rgba(148, 148, 148, 0.248);
+    padding: 4px;
+}
+img {
+    width: 45rem;
+    height: auto;
+}
+scrollview {
+    color: rgba(0, 0, 0, 0.426);
+}
