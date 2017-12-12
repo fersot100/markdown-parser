@@ -107,8 +107,8 @@ class Comments extends React.Component {
         <div className="comments">
           <div className='comments__header'>
             <div className='comments__info'>
-              <h1>Comments</h1>
               <div className='comments__info-input'>
+                <h2 className="comments__header">Discussion</h2>
                 <input className='input' type='text' placeholder='Search for a question' />
                 <button onClick={this.openQuestion} className='button'>Ask a new question</button>
               </div>
