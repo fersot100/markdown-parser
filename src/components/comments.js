@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from './comment';
 
 const comments = [{
-  title: 'Lorem Ipsum is nice',
+  votes: 12,
   body: "I really like the part about lorem ipsum",
   student: {
     name: 'Dustin Podell',
@@ -10,7 +10,7 @@ const comments = [{
     grade: '12'
   }
 },{
-  title: 'I am Confused',
+  votes: 7,
   body: "How do I add a GameObject to the Unity hierarchy",
   student: {
     name: 'James Miers',
@@ -18,7 +18,7 @@ const comments = [{
     grade: '10'
   }
 },{
-  title: 'This lesson really taught me a lot',
+  votes: 2,
   body: "I am learning so much good code",
   student: {
     name: 'Juan Erazo',
@@ -27,7 +27,25 @@ const comments = [{
   }
 }]
 
-const Comments = props => {
+class Comments extends React.Component {
+
+  state = {comments: []};
+
+  componentDidMount(){
+    this.setState(() => ({comments}));
+  }
+
+  handleOnLike = (index) => {
+    
+    const newState = this.state;
+    newState.comments[index].votes++;
+
+    this.setState(() => ({
+      ...newState
+    }))
+  }
+
+  render(){
     return (
         <div className="comments">
           <div className='comments__info'>
@@ -38,12 +56,14 @@ const Comments = props => {
             </div>
           </div>
           <div className='comments__body'>
-            {comments.map((comment,i) => 
-              <Comment {...comments[i]}/>
+            {this.state.comments.sort((a, b) => b.votes - a.votes)
+                                .map((comment,i) => 
+              <Comment {...comments[i]} index={i} onLike={this.handleOnLike}/>
             )}
           </div>
         </div>
     )
+  }
 }
    
 
