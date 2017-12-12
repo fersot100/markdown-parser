@@ -8,6 +8,8 @@
 .header {
   background: rgb(0, 132, 255);
   grid-column: span 3;
+  display: flex;
+  justify-content: center;
 }
 .scrollView {
   grid-column: 2;

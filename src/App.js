@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="header">
-
+          <h1>EYEQXL</h1>
         </div>
         <ScrollView markdown={this.state.markdown}/>
         <Comments />
