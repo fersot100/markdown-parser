@@ -117,11 +117,11 @@ class Comments extends React.Component {
               <form onSubmit={this.onFormSubmit}> 
                   <div className='comments__forminput-top'>
                     <div className='comments__forminput'>
-                      <p>name</p>
+                      <p>Name</p>
                       <input name='name' className='input__scalable' type='text' placeholder='Your Name' value={this.state.nameText} onChange={this.onNameChange}/>
                     </div>
                     <div  className='comments__forminput'> 
-                      <p>school</p>
+                      <p>School</p>
                       <input name='school' className='input__scalable' type='text' placeholder='Your School' value={this.state.schoolText} onChange={this.onSchoolChange}/>
                     </div>
                   </div>
