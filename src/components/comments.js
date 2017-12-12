@@ -25,6 +25,14 @@ const comments = [{
     school: 'Wilson High Scool',
     grade: 11
   }
+},{
+  votes: 0,
+  body: "Can someone explain the code in step 2? I am stuck getting an error on line 34",
+  student: {
+    name: 'William kim',
+    school: 'Monroe High Scool',
+    grade: 12
+  }
 }]
 
 class Comments extends React.Component {
@@ -73,16 +81,15 @@ class Comments extends React.Component {
           grade: 12
         }
       }
-      console.log(newComment);
-      console.log(this.state.comments[0])
 
-      this.setState((prevstate) => ({
-        //comments: [...prevstate.comments, newComment], WHY DOES THIS NOT WORK
-        openQuestion: !prevstate.openQuestion,
-        commentText:'',
-        nameText:'',
-        schoolText:''
-      }));
+        this.setState((prevstate) => ({
+          comments: [...prevstate.comments, newComment],
+          questionOpen: !prevstate.openQuestion,
+          commentText:'',
+          nameText:'',
+          schoolText:''
+        }));
+ 
     }else{
 
     }
@@ -135,9 +142,9 @@ class Comments extends React.Component {
             </div>
           </div>
           <div className='comments__body'>
-            {this.state.comments.sort((a, b) => b.votes - a.votes)
+            {this.state.comments.length > 0 && this.state.comments.sort((a, b) => b.votes - a.votes)
                                 .map((comment,i) => 
-              <Comment {...comments[i]} index={i} onLike={this.handleOnLike} key={i}/>
+              <Comment {...this.state.comments[i]} index={i} onLike={this.handleOnLike} key={i}/>
             )}
           </div>
         </div>
