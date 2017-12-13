@@ -34,7 +34,8 @@ class Comments extends React.Component {
     questionOpen: false,
     commentText:'',
     nameText:'',
-    schoolText:''
+    schoolText:'',
+    error: ''
   };
 
   componentDidMount(){
@@ -79,11 +80,12 @@ class Comments extends React.Component {
           openQuestion: !prevstate.openQuestion,
           commentText:'',
           nameText:'',
-          schoolText:''
+          schoolText:'',
+          error: ''
         }));
  
     }else{
-
+      this.setState(() => ({error: 'All fields are required'}));
     }
   }
 
@@ -128,6 +130,7 @@ class Comments extends React.Component {
                   <div className='comments__forminput'>
                     <p>Comment</p>
                     <textarea name='comment' className='input__scalable input-textarea' type='text' placeholder='Write your comment here...'  value={this.state.commentText} onChange={this.onCommentTextChange}/>
+                    {this.state.error && <p className='comment__error'>{this.state.error}</p>}
                     <button className='button'>Submit</button>
                   </div>
               </form>
