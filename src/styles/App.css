@@ -159,6 +159,11 @@
   margin: 0.4rem 0;
 }
 
+.comment__error {
+  font-style: italic;
+  color: rgb(165, 165, 165);
+}
+
 .comment__student{
   display: flex;
   flex-direction: row;
