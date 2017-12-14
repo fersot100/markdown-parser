@@ -104,6 +104,10 @@ class Comments extends React.Component {
     this.setState(() => ({ commentText }));
   }
 
+  handleCommentEnter = () => {
+
+  }
+
   render(){
     return (
         <div className="comments">
@@ -137,10 +141,14 @@ class Comments extends React.Component {
             </div>
           </div>
           <div className='comments__body'>
-            {this.state.comments.length > 0 && this.state.comments.sort((a, b) => b.votes - a.votes)
-                                .map((comment,i) => 
-              <Comment {...this.state.comments[i]} index={i} onLike={this.handleOnLike} key={i}/>
-            )}
+            <div className='comments__list'>
+              {this.state.comments.length > 0 && this.state.comments.sort((a, b) => b.votes - a.votes)
+                                  .map((comment,i) => 
+                <Comment {...this.state.comments[i]} index={i} onLike={this.handleOnLike} key={i}/>
+              )}
+            </div>
+            <div className='comments__detailed'>
+            </div>
           </div>
         </div>
     )

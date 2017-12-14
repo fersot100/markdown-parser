@@ -74,6 +74,20 @@
   margin-bottom: 10rem; 
 }
 
+.comments__body{
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments__list {
+  flex: 1;
+}
+
+.comments__detailed {
+  flex: 0.000001;
+  transition: flex 600ms ease;
+}
+
 .comments__header {
   display: flex;
   flex-direction: row;
