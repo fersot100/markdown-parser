@@ -1,6 +1,7 @@
 import React from 'react';
 import Comment from './comment';
 
+//Remove once database is up
 const comments = [{
   votes: 12,
   body: "I really like the part about lorem ipsum",
@@ -89,11 +90,13 @@ class Comments extends React.Component {
     }
   }
 
+  //Can be removed when accounts are databased
   onNameChange = (e) => {
     const nameText = e.target.value; 
     this.setState(() => ({ nameText }));
   }
 
+  //Can be removed when accounts are databased
   onSchoolChange = (e) => {
     const schoolText = e.target.value; 
     this.setState(() => ({ schoolText }));
@@ -104,11 +107,13 @@ class Comments extends React.Component {
     this.setState(() => ({ commentText }));
   }
 
+  //TODO: handle clicking of comments, enter into reply section
   handleCommentEnter = () => {
 
   }
 
   render(){
+    //TODO: break jsx into seperate components
     return (
         <div className="comments">
           <div className='comments__header'>
