@@ -1,5 +1,7 @@
 import React from 'react';
 
+//This may be expanded for the detailed view window
+//TODO: add moment.js for timestamps
 export const comment = ({votes, body, student, index, onLike}) => (
   <div className='comment'>
     <div className='comment__votes'>

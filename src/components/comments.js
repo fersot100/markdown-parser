@@ -65,6 +65,7 @@ class Comments extends React.Component {
     const schoolLength = this.state.schoolText.length;
     const commentlength = this.state.commentText.length;
 
+    //If comment for was filled out correctly, append it to local state
     if(namelength > 0 && schoolLength > 0 && commentlength > 0){
       const newComment = {
         votes: 0,
