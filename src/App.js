@@ -12,6 +12,7 @@ class App extends Component {
   }
  
   componentWillMount(){
+    //grabs the temp markdown
     const lesson3 = require('./data/lesson3.md')
     fetch(lesson3).then(
       res => { return res.text()}
